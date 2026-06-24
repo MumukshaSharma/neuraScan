@@ -34,7 +34,7 @@ export default function App() {
     try {
       setLoading(true);
       const fd = new FormData(); fd.append("file", file);
-      const res = await axios.post("http://localhost:8000/predict", fd, { headers: { "Content-Type": "multipart/form-data" } });
+      const res = await axios.post("https://neurascan-x7j0.onrender.com", fd, { headers: { "Content-Type": "multipart/form-data" } });
       setResult(res.data);
     } catch { showToast("Analysis failed. Check backend server."); }
     finally { setLoading(false); }
